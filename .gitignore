@@ -1,0 +1,10 @@
+.env
+.env.local
+.env.production
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+./data/*
