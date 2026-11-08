@@ -5,6 +5,8 @@ Ce projet construit un système de recommandation de quartiers parisiens à part
 L'objectif de ce projet est de manipuler des données brutes, de les nettoyer, gérer les valeurs manquantes pour pouvoir utiliser ensuite les données propres sur des algorithmes de ML non supervisé pour construire différents scores thématiques.
 Ainsi on pourra proposer la zone de Paris qui correspond mieux au attente d'une famille, d'un étudiant, un jeune activiste etc. tout en respectant ses contraintes de budget et de proximité.
 
+Nous ne sommes pas passé par github pour travailler, nous avons envoyé les notebooks sur whatapps.
+
 ## Démarche suivie
 
 La démarche repose sur trois étapes :
@@ -254,10 +256,59 @@ Pour aller plus loin, il serait utile de collecter des évaluations utilisateurs
 
 
 ## Liens pour accéder aux données
+# Sources des données
 
+## INSEE
 
+- `base-ic-activite-residents-2022_csv/` (données + méta) → [insee.fr/statistiques/8647006](https://www.insee.fr/fr/statistiques/8647006) ou [insee.fr/statistiques/8647012](https://www.insee.fr/fr/statistiques/8647012) ¹
+- `base-ic-logement-2022.CSV` + `base-ic-logement-2022_csv/meta_base-ic-logement-2022.CSV` → [insee.fr/statistiques/8647006](https://www.insee.fr/fr/statistiques/8647006) ou [insee.fr/statistiques/8647012](https://www.insee.fr/fr/statistiques/8647012) ¹
 
+## Bruit
+
+- Couches SIG `air-bruit 2024_9_classes/` (`AirBruit_2024` .shp / .dbf / .shx / .prj / .cpg / .qmd) → [bruitparif.fr/opendata-air-bruit](https://www.bruitparif.fr/opendata-air-bruit/)
+- `Symbologie.xlsx` → même source
+
+## Open Data Paris
+
+- `espaces_verts.parquet` → [espaces_verts](https://opendata.paris.fr/explore/dataset/espaces_verts/)
+- `les-arbres.parquet` → [les-arbres](https://opendata.paris.fr/explore/dataset/les-arbres/)
+- `lieux-municipaux.parquet` → [lieux-municipaux](https://opendata.paris.fr/explore/dataset/lieux-municipaux/)
+- `stationnement-voie-publique-emplacements.parquet` → [stationnement-voie-publique-emplacements](https://opendata.paris.fr/explore/dataset/stationnement-voie-publique-emplacements/)
+
+## data.gouv.fr
+
+- `stationnement-sur-voie-publique-secteurs-residentiels.geojson` → [Stationnement sur voie publique – zones résidentielles](https://www.data.gouv.fr/datasets/stationnement-sur-voie-publique-zones-de-stationnement-residentiel)
+- `logement-encadrement-des-loyers.geojson` → [Logement – encadrement des loyers](https://www.data.gouv.fr/datasets/logement-encadrement-des-loyers)
+- `velib-localisation-et-caracteristique-des-stations.geojson` → [Vélib – localisation et caractéristiques des stations](https://www.data.gouv.fr/datasets/velib-localisation-et-caracteristique-des-stations-1/)
+- `iris.geojson` → [Contours IRIS](https://www.data.gouv.fr/datasets/contours-iris-r/)
+- `full-2025.csv` (DVF) → [Demandes de valeurs foncières géolocalisées](https://www.data.gouv.fr/datasets/demandes-de-valeurs-foncieres-geolocalisees)
+- `geoloc-geolocalisationetablissement-sirene-pour-etudes-statistiques-parquet.parquet` → [Géolocalisation des établissements SIRENE](https://www.data.gouv.fr/datasets/geolocalisation-des-etablissements-du-repertoire-sirene-pour-les-etudes-statistiques)
+- `stock-stocketablissement-parquet.parquet` → [Base SIRENE des entreprises et de leurs établissements](https://www.data.gouv.fr/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret)
+- `stock-stockunitelegale-parquet.parquet` → même lien que ci-dessus
+
+## Île-de-France Mobilités
+
+- `IDFM-gtfs/` (14 fichiers .txt) → [Offre horaires TC – GTFS IDFM](https://prim.iledefrance-mobilites.fr/fr/jeux-de-donnees/offre-horaires-tc-gtfs-idfm)
+- `offre-horaires-tc-gtfs-idfm.geojson` / `.parquet` → même source
+
+## Éducation nationale
+
+Portail : [data.education.gouv.fr](https://data.education.gouv.fr/)
+
+- `fr-en-annuaire-education.geojson` → [fr-en-annuaire-education](https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/)
+- `fr-en-indicateurs-valeur-ajoutee-colleges.csv` → [fr-en-indicateurs-valeur-ajoutee-colleges](https://data.education.gouv.fr/explore/dataset/fr-en-indicateurs-valeur-ajoutee-colleges/)
+- `fr-en-ips-ecoles-ap2022.csv` → [fr-en-ips-ecoles-ap2022](https://data.education.gouv.fr/explore/dataset/fr-en-ips-ecoles-ap2022/)
+- `fr-en-ips-lycees-ap2023.csv` → [fr-en-ips-lycees-ap2023](https://data.education.gouv.fr/explore/dataset/fr-en-ips-lycees-ap2023/)
 
 ## Méthode d'éxecution
 
 Pour recréer l'environnement du projet, il suffit de télécharger les différentes données ci-dessus, et d'exécuter les quatre notebooks dans l'ordre. 
+
+Pour ajouté l'extension, il faut aller sur google chrome, aller dans les extensions, se mettre en mode devellopeur et rajouter le fichier d'extension
+
+Vous pourrez avoir ceci :
+![Le top des meilleurs quartiers](<image extension/Capture d’écran 2026-11-08 à 13.59.27.png>)
+
+![Détail du meilleur quartier](<image extension/Capture d’écran 2026-11-08 à 13.59.39.png>)
+
+![Fonctionnalité de recherche via une adresse](<image extension/Capture d’écran 2026-11-08 à 14.00.51.png>)
