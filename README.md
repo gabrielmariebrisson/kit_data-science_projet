@@ -300,6 +300,23 @@ Portail : [data.education.gouv.fr](https://data.education.gouv.fr/)
 - `fr-en-ips-ecoles-ap2022.csv` → [fr-en-ips-ecoles-ap2022](https://data.education.gouv.fr/explore/dataset/fr-en-ips-ecoles-ap2022/)
 - `fr-en-ips-lycees-ap2023.csv` → [fr-en-ips-lycees-ap2023](https://data.education.gouv.fr/explore/dataset/fr-en-ips-lycees-ap2023/)
 
+## Structure du projet
+
+```
+kit_data-science_projet/
+├── data/                                   # Données brutes téléchargées
+├── data_cleans/                            # Données créer par le notebook 1
+├── image extension
+├── extension_créer_par_IA/                 # Code pour l'extension et Données sauvegardé par le notebook 4
+├── notebooks/
+│   ├── 1_Nettoyage.ipynb                   
+│   ├── 2_Jointure_IRIS.ipynb              
+│   ├── 3_Recommandation_IRIS.ipynb        
+│   └── 4_POC.ipynb                        
+├── Outil_recommandation_quartiers_Paris.pdf
+└── save/                                   # Données créer par le notebook 2 et 3 
+```
+
 ## Méthode d'éxecution
 
 Pour recréer l'environnement du projet, il suffit de télécharger les différentes données ci-dessus, et d'exécuter les quatre notebooks dans l'ordre. 
