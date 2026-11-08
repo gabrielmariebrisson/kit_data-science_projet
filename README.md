@@ -253,5 +253,11 @@ Pour aller plus loin, il serait utile de collecter des évaluations utilisateurs
 
 
 
+## Liens pour accéder aux données
 
 
+
+
+## Méthode d'éxecution
+
+Pour recréer l'environnement du projet, il suffit de télécharger les différentes données ci-dessus, et d'exécuter les quatre notebooks dans l'ordre. 
